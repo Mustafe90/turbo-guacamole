@@ -15,6 +15,7 @@ export default {
         babel({
             exclude: "node_modules/**"
         }),
+        //Todo: Enable hot re-loading
         serve({
             port: 8008,
             https: false,

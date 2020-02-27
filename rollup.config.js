@@ -1,6 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve"
 import babel from "rollup-plugin-babel"
 import serve from "rollup-plugin-serve"
+import liveReload from "rollup-plugin-livereload"
 
 export default {
 
@@ -22,6 +23,10 @@ export default {
             open: true,
             verbose: true,
             contentBase: ["public"]
+        }),
+        liveReload({
+            watch: "public",
+            verbose: true
         })
     ]
 };

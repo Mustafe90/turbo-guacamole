@@ -8,7 +8,7 @@ var bundle = (function () {
   var index = (function () {
     console.log("the answer is ".concat(x, " yo"));
   });
-  console.log("hgello o s d");
+  console.log("hgelsag asg lo");
 
   return index;
 

@@ -2,6 +2,7 @@ import resolve from "@rollup/plugin-node-resolve"
 import babel from "rollup-plugin-babel"
 import serve from "rollup-plugin-serve"
 import liveReload from "rollup-plugin-livereload"
+import { eslint } from "rollup-plugin-eslint"
 
 export default {
 
@@ -27,6 +28,7 @@ export default {
         liveReload({
             watch: "public",
             verbose: true
-        })
+        }),
+        eslint()
     ]
 };

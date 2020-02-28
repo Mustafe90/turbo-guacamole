@@ -21,7 +21,6 @@ export default {
         serve({
             port: 8008,
             https: false,
-            open: true,
             verbose: true,
             contentBase: ["public"]
         }),

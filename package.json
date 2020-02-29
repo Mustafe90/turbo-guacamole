@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/Mustafe90/turbo-guacamole#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.3.3",
@@ -36,7 +38,6 @@
     "rollup-plugin-serve": "^1.0.1"
   },
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4"
+    "immutable": "^4.0.0-rc.12"
   }
 }

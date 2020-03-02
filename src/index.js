@@ -1,8 +1,13 @@
+import {fromEvent} from "rxjs";
+import { filter,map,debounceTime, distinctUntilChanged } from "rxjs/operators";
 
-import x from "./search";
 
-export default () => {
-    console.log(`the answer is ${x} yo`);
-  };
+const searchInput = document.querySelector("input");
 
-  console.log(  "hgelsag asg lo"  ); 
+let input = fromEvent(searchInput,"keyup");
+
+input.pipe(filter(e => e.target.value.length > 2),
+      map(e => e.target.value.trim()),
+      debounceTime(500),
+      distinctUntilChanged())
+      .subscribe(x => console.log(x) );

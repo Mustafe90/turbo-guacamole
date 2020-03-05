@@ -16,7 +16,9 @@ input.pipe(filter(e => e.target.value.length > 2),
 
 
 //TODO: investigate a way to not share youtube key in github. 
-var apiObservable =  fromFetch("Youtube Url").pipe(
+
+//TODO: Construct this string yourself. 
+var apiObservable =  fromFetch("").pipe(
       switchMap(
             Response => {
                   if(Response.ok){
@@ -36,6 +38,11 @@ var apiObservable =  fromFetch("Youtube Url").pipe(
             console.log(err);
             return of({error : true, message: `Error ${err.message}`});
       })
+);
+
+apiObservable.subscribe(
+      success => console.log(success),
+      error => console.log(error)
 );
 
 

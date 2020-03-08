@@ -9,10 +9,7 @@ const searchInput = document.querySelector("input");
 
 let input = fromEvent(searchInput,"keyup");
 
-let videos = from([]);
-
-class Product{};
-
+//TODO: Emit this event elsewhere to allow us to render the results
 input.pipe(filter(e => e.target.value.length > 2),
       map(e => e.target.value),
       debounceTime(600),
@@ -46,7 +43,10 @@ input.pipe(filter(e => e.target.value.length > 2),
             return of({error : true, message: `Error ${err.message}`});
       }))  
       .subscribe({
-            next: response => console.log(response),
+            next: response => {
+                  console.log(response);
+                  data = response;
+            },
             error: error => console.log(error),
             complete: complete => console.log("Compelet")
       });

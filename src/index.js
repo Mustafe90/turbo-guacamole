@@ -60,6 +60,29 @@ let SearchInput = query =>  {
   );
 };
 
+let CreateResultArea = data => {
+
+      let container = document.createElement("div");
+
+      container.classList = ["container"];
+
+      if(!data || !data.items){
+            return of(container);
+      }
+
+      for(let item of data.items){
+            
+            let result = document.createDocumentFragment("div");
+
+            console.log({item});
+
+            result.classList = ["video"];
+
+            container.appendChild(result);
+      }
+
+      return of(container);
+};
 
 //TODO: Construct this string yourself
 
@@ -69,6 +92,20 @@ let resultArea = document.querySelector("#result");
 
 let data = input.pipe(mergeMap(x => SearchInput(x)));
 
-// let html = data.pipe(map(x => { return document.createElement("div") x.items}))subscribe({
-//       next: response => console.log(response)
-// });
+let newDivElementOnUserSearch = data.pipe(mergeMap(x => CreateResultArea(x))).subscribe({
+      next: container => {
+
+            //TODO: on input search create a spinner, when data is loading keep the spinner! 
+           let searchResultArea = document.getElementById("result");
+
+           if(searchResultArea.childElementCount > 0 && container.childElementCount > 0){
+                 searchResultArea.innerHTML = ""; //TODO such a shit move! do it probably through recursion son!
+           }
+           searchResultArea.appendChild(container);
+      },
+      closed: console.log("closed"),
+      error: error => console.log(error),
+      completed: console.log("Completed")
+});
+
+//TODO: Write a document element generating method to generate divs / elements

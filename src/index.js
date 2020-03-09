@@ -59,13 +59,7 @@ let SearchInput = query =>  {
     })
   );
 };
-// .subscribe({
-//       next: response => {
-//             console.log(response);
-//       },
-//       error: error => console.log(error),
-//       complete: complete => console.log("Compelet")
-// });
+
 
 //TODO: Construct this string yourself
 

@@ -1,4 +1,5 @@
-import {fromFetch} from "rxjs";
+import {from, of} from "rxjs";
+import {fromFetch} from "rxjs/fetch";
 import {switchMap,map,catchError} from "rxjs/operators";
 
 export default function SearchInput(query) {

@@ -10,6 +10,8 @@ let youtubeSearch = seachInput(inputElement).pipe(mergeMap(x => search(x)));
 let newDivElementOnUserSearch = youtubeSearch
   .pipe(mergeMap(x => seachResult(x)))
   .subscribe({
+    //TODO: make sure on change to clean out the search area
+    //TODO: make this look pretty for the love of god.
     next: container => {
       console.log(container);
       //TODO: on input search create a spinner, when youtubeSearch is loading keep the spinner!

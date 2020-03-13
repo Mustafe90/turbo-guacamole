@@ -14,13 +14,8 @@ let newDivElementOnUserSearch = youtubeSearch
       console.log(container);
       //TODO: on input search create a spinner, when youtubeSearch is loading keep the spinner!
       let searchResultArea = document.getElementById("result");
+      console.log({ container });
 
-      if (
-        searchResultArea.childElementCount > 0 &&
-        container.childElementCount > 0
-      ) {
-        searchResultArea.innerHTML = ""; //TODO such a shit move! do it probably through recursion son!
-      }
       searchResultArea.appendChild(container);
     },
     closed: console.log("closed"), //TODO: this closes on init why?

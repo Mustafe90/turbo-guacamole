@@ -35,7 +35,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-livereload": "^1.0.4",
-    "rollup-plugin-serve": "^1.0.1"
+    "rollup-plugin-serve": "^1.0.2"
   },
   "dependencies": {
     "immutable": "^4.0.0-rc.12",
